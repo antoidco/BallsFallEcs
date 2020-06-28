@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: Setup
+  m_EditorClassIdentifier: Assembly-CSharp:Game:Setup
+  players:
+  - {fileID: 11400000, guid: 1c65eec0ccd11e14c9afbab06b7b353f, type: 2}
+  - {fileID: 11400000, guid: 60845a179e3792c4a90bfe3cd6e3ef1d, type: 2}
+  level: {fileID: 11400000, guid: 3638c2171ed59564ab708d95395ba091, type: 2}
