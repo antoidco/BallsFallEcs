@@ -1,6 +1,5 @@
 ﻿namespace Game.Components {
-    public struct LevelStateComponent
-    {
+    public struct LevelStateComponent {
         public LevelState LevelState;
     }
 

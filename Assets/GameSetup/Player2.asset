@@ -16,7 +16,7 @@ MonoBehaviour:
   power: 10
   moveLeftKey: 276
   moveRightKey: 275
-  bot: 1
+  bot: 0
   playerPrefab: {fileID: 5097015772820975922, guid: 4f327e29316f87649af42814566228ba,
     type: 3}
-  spawnPosition: {x: 1, y: 0}
+  spawnPosition: {x: 2, y: 0}

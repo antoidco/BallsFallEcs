@@ -27,19 +27,20 @@ namespace Game.Systems {
             bool isMaxSpeedRight = velX >= playerComponent.Speed;
 
             _force.x = 0;
-            _torque.y = 0;
+            //_torque.y = 0;
             if (Input.GetKey(playerComponent.MoveLeftKey)) {
                 _force.x -= (isMaxSpeedLeft ? 0 : 100f);
-                _torque.y -= (isMaxSpeedLeft ? 0 : 100f);
+                //_torque.y -= (isMaxSpeedLeft ? 0 : 100f);
             }
 
             if (Input.GetKey(playerComponent.MoveRightKey)) {
                 _force.x += (isMaxSpeedRight ? 0 : 100f);
-                _torque.y += (isMaxSpeedLeft ? 0 : 100f);
+                //_torque.y += (isMaxSpeedRight ? 0 : 100f);
             }
 
             moveComponent.Force = _force * Time.fixedDeltaTime * playerComponent.Power;
-            moveComponent.Tourqe = _force * Time.fixedDeltaTime * playerComponent.Power;
+            //moveComponent.Tourqe = _force * Time.fixedDeltaTime * playerComponent.Power;
+            moveComponent.Tourqe = Vector3.zero;
         }
     }
 }

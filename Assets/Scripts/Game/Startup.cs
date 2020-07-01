@@ -1,4 +1,5 @@
 using Game.Components;
+using Game.Components.Pool;
 using Game.Systems;
 using Leopotam.Ecs;
 using UnityEngine;
@@ -27,17 +28,22 @@ namespace Game {
                 .Add(new PlayerControlRun())
                 .Add(new AIControlRun())
                 .Add(new PlayerMoveRun())
+                .Add(new ShootMachinesRun())
                 .Inject(gameSetup)
                 .Init();
 
             _updateSystems
                 .Add(new PlayerInit()) // but here it is okay for both update and fixedUpdate systems (why?)
+                .Add(new PoolInit())
+                .Add(new ShootMachinesInit())
                 .Add(new LevelInit())
                 .Add(new LevelRun())
                 .Add(new LevelEndRun())
                 .Add(new LevelRestartRun())
+                .Add(new PoolSpawnRun())
                 .OneFrame<FinishedFrame>()
                 .OneFrame<RestartFrame>()
+                .OneFrame<PoolSpawnFrame>()
                 .Inject(gameSetup)
                 .Inject(sceneData)
                 .Init();

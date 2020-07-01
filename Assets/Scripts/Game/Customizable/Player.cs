@@ -1,10 +1,8 @@
 ﻿using UnityEngine;
 
-namespace Game.GameSetup
-{
-    [CreateAssetMenu(menuName = "GameSetup/" + nameof(Player))]
-    public sealed class Player : ScriptableObject
-    {
+namespace Game.Customizable {
+    [CreateAssetMenu(menuName = "Customizable/" + nameof(Player))]
+    public sealed class Player : ScriptableObject {
         [Range(1, 10)] public float speed = 3;
         [Range(5, 20)] public float power = 10;
         public KeyCode moveLeftKey;

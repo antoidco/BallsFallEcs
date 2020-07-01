@@ -38,7 +38,7 @@ namespace Game.Systems {
             bool isMaxSpeedRight = velX >= playerComponent.Speed;
 
             _force.x = 0;
-            _torque.y = 0;
+            //_torque.y = 0;
 
             float botX = bodyComponent.Body.position.x;
 
@@ -52,15 +52,16 @@ namespace Game.Systems {
 
             if (toLeft) {
                 _force.x -= (isMaxSpeedLeft ? 0 : 100f);
-                _torque.y -= (isMaxSpeedLeft ? 0 : 100f);
+                //_torque.y -= (isMaxSpeedLeft ? 0 : 100f);
             }
             else {
                 _force.x += (isMaxSpeedRight ? 0 : 100f);
-                _torque.y += (isMaxSpeedLeft ? 0 : 100f);
+                //_torque.y += (isMaxSpeedLeft ? 0 : 100f);
             }
 
             moveComponent.Force = _force * Time.fixedDeltaTime * playerComponent.Power;
-            moveComponent.Tourqe = _force * Time.fixedDeltaTime * playerComponent.Power;
+            //moveComponent.Tourqe = _force * Time.fixedDeltaTime * playerComponent.Power;
+            moveComponent.Tourqe = Vector3.zero;
         }
     }
 }

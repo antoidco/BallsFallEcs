@@ -1,10 +1,8 @@
 ﻿using UnityEngine;
 
-namespace Game.GameSetup
-{
-    [CreateAssetMenu(menuName = "GameSetup/" + nameof(Level))]
-    public sealed class Level : ScriptableObject
-    {
+namespace Game.Customizable {
+    [CreateAssetMenu(menuName = "Customizable/" + nameof(Level))]
+    public sealed class Level : ScriptableObject {
         [Range(50, 200)] public int sizeHorizontal = 80;
         [Range(10, 200)] public int sizeVertical = 100;
         [Range(0, 0.2f)] public float wallDensity = 0.01f;

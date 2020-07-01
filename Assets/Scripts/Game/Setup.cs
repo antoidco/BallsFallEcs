@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
-using Game.GameSetup;
+using Game.Customizable;
 
 namespace Game {
-    [CreateAssetMenu(menuName = "GameSetup/" + nameof(Setup))]
+    [CreateAssetMenu(menuName = "Customizable/" + nameof(Setup))]
     public sealed class Setup : ScriptableObject {
         public List<Player> players;
         public Level level;
+        public Pool pool;
     }
 }

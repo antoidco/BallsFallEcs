@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d98014c978c24b10bb9e78d4e03a9276, type: 3}
+  m_Name: BombPool
+  m_EditorClassIdentifier: 
+  tag: Bomb
+  prefabs:
+  - {fileID: 8586664666548159218, guid: 46eda84eea6c0a0419aa5e65d965f109, type: 3}
+  - {fileID: 2508310864425129672, guid: 9f6dd295fa6306241ba8eda54b8a796e, type: 3}
+  - {fileID: 3878251612853151071, guid: 93c6997caa084ee4f8df65df86d7a28f, type: 3}
+  size: 50
