@@ -22,7 +22,7 @@ namespace Game.Systems {
                         var playerComponent = _playerEntities.Get2(player);
                         ref var bodyComponent = ref _playerEntities.Get1(player);
                         
-                        bodyComponent.Body.position = _gameData.players[playerComponent.Id].spawnPosition;
+                        bodyComponent.Body.position = _sceneData.players[playerComponent.Id].spawnPosition;
                         bodyComponent.Body.velocity = new Vector3(0, 0, 0);
                     }
 
