@@ -6,7 +6,6 @@ using UnityEngine;
 namespace Game.Systems {
     sealed class PlayerInit : IEcsInitSystem {
         readonly EcsWorld _world = null;
-        readonly Setup _gameData = null;
         readonly SceneData _sceneData = null;
 
         public void Init() {

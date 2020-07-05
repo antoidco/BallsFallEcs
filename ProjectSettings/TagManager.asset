@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - ShootMachine
+  - Game1v1
+  - GameWithBot
   layers:
   - Default
   - TransparentFX
