@@ -2,6 +2,7 @@ using System;
 using Game.Components;
 using Game.Components.Player;
 using Leopotam.Ecs;
+using TMPro;
 using UnityEngine;
 
 namespace Game.Systems {
@@ -27,7 +28,7 @@ namespace Game.Systems {
                         bool win = _finishedEnitites.Get3(finish).Win;
                         Debug.Log($"Player {playerComponent.Id} {(win ? "win" : "loose")}");
                         
-                        _sceneData.finishText.GetComponent<TextMesh>().text =
+                        _sceneData.finishText.GetComponent<TextMeshPro>().text =
                             $"Player {playerComponent.Id} {(win ? "win" : "loose")}{Environment.NewLine}Press {_gameData.level.restartKey.ToString()} to restart";
                     }
 
@@ -38,7 +39,7 @@ namespace Game.Systems {
                             var playerComponent = _playerEnitites.Get1(player);
                             scoreText += $"Player {playerComponent.Id}: {playerComponent.Score} {Environment.NewLine}";
                         }
-                        _sceneData.scoreText.GetComponent<TextMesh>().text = scoreText;
+                        _sceneData.scoreText.GetComponent<TextMeshPro>().text = scoreText;
                     }
                 }
             }
