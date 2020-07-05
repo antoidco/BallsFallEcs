@@ -562,7 +562,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a41deec22ce1fd4d9ba1f06d42fdf29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameSetup: {fileID: 11400000, guid: 3f26d7429ebe21c4abf8ea1d547ee076, type: 2}
+  gameSetup: {fileID: 11400000, guid: 298f463798ca748489a7a91bd242721c, type: 2}
   sceneData: {fileID: 588415490}
 --- !u!4 &588415489
 Transform:

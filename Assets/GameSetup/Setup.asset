@@ -9,11 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: a4a63bb8a0654a144b3755190f5aef58, type: 3}
   m_Name: Setup
-  m_EditorClassIdentifier: Assembly-CSharp:Game:Setup
-  players:
-  - {fileID: 11400000, guid: 1c65eec0ccd11e14c9afbab06b7b353f, type: 2}
-  - {fileID: 11400000, guid: 60845a179e3792c4a90bfe3cd6e3ef1d, type: 2}
+  m_EditorClassIdentifier: 
   level: {fileID: 11400000, guid: 3638c2171ed59564ab708d95395ba091, type: 2}
   pool: {fileID: 11400000, guid: e37fe6bb9a571f44594200bb53d4cabd, type: 2}
