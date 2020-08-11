@@ -15,7 +15,6 @@ namespace Game.Systems {
             null;
 
         private Vector3 _force = new Vector3(0, 0, 0);
-        private Vector3 _torque = new Vector3(0, 0, 0);
 
         public void Run() {
             foreach (int player in _botEntities) {
@@ -38,7 +37,6 @@ namespace Game.Systems {
             bool isMaxSpeedRight = velX >= playerComponent.Speed;
 
             _force.x = 0;
-            //_torque.y = 0;
 
             float botX = bodyComponent.Body.position.x;
 
@@ -51,16 +49,13 @@ namespace Game.Systems {
                 toLeft = wereMovingToLeft;
 
             if (toLeft) {
-                _force.x -= (isMaxSpeedLeft ? 0 : 100f);
-                //_torque.y -= (isMaxSpeedLeft ? 0 : 100f);
+                _force.x -= (isMaxSpeedLeft ? 0 : 1f);
             }
             else {
-                _force.x += (isMaxSpeedRight ? 0 : 100f);
-                //_torque.y += (isMaxSpeedLeft ? 0 : 100f);
+                _force.x += (isMaxSpeedRight ? 0 : 1f);
             }
 
-            moveComponent.Force = _force * Time.fixedDeltaTime * playerComponent.Power;
-            //moveComponent.Tourqe = _force * Time.fixedDeltaTime * playerComponent.Power;
+            moveComponent.Force = _force * playerComponent.Power;
             moveComponent.Tourqe = Vector3.zero;
         }
     }

@@ -24,22 +24,22 @@ namespace Game {
             Leopotam.Ecs.UnityIntegration.EcsSystemsObserver.Create(_updateSystems);
 #endif
             _fixedUpdateSystems
-                //.Add(new PlayerInit()) // if I move it here, player entities are not filtered in update systems 
-                .Add(new PlayerControlRun())
-                .Add(new AIControlRun())
                 .Add(new PlayerMoveRun())
-                .Add(new ShootMachinesRun())
                 .Inject(gameSetup)
+                .Inject(sceneData)
                 .Init();
 
             _updateSystems
-                .Add(new PlayerInit()) // but here it is okay for both update and fixedUpdate systems (why?)
+                .Add(new PlayerInit())
                 .Add(new PoolInit())
                 .Add(new ShootMachinesInit())
                 .Add(new LevelInit())
+                .Add(new PlayerControlRun())
+                .Add(new AIControlRun())
                 .Add(new LevelRun())
                 .Add(new LevelEndRun())
                 .Add(new LevelRestartRun())
+                .Add(new ShootMachinesRun())
                 .Add(new PoolSpawnRun())
                 .OneFrame<FinishedFrame>()
                 .OneFrame<RestartFrame>()
