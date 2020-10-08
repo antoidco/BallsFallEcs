@@ -4,8 +4,8 @@
     "com.leopotam.ecs-unityintegration": "https://github.com/Leopotam/ecs-unityintegration.git#develop",
     "com.unity.collab-proxy": "1.2.16",
     "com.unity.ide.rider": "1.1.4",
-    "com.unity.ide.vscode": "1.2.0",
-    "com.unity.test-framework": "1.1.14",
+    "com.unity.ide.vscode": "1.2.1",
+    "com.unity.test-framework": "1.1.16",
     "com.unity.textmeshpro": "2.0.1",
     "com.unity.timeline": "1.2.14",
     "com.unity.ugui": "1.0.0",
@@ -40,15 +40,5 @@
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
-  },
-  "lock": {
-    "com.leopotam.ecs": {
-      "revision": "HEAD",
-      "hash": "efa43fb079d148571933c3915c72a22c67c72464"
-    },
-    "com.leopotam.ecs-unityintegration": {
-      "revision": "develop",
-      "hash": "1bee89d650a3c110781d967948b1c41508af0a60"
-    }
   }
 }
