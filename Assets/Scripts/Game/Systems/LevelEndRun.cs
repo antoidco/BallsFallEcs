@@ -30,7 +30,7 @@ namespace Game.Systems {
                         bool win = _finishedEnitites.Get3(finish).Win;
                         Debug.Log($"Player {playerComponent.Id} {(win ? "win" : "loose")}");
 
-                        _sceneData.finishText.GetComponent<TextMeshPro>().text =
+                        _sceneData.finishText.GetComponent<TextMeshProUGUI>().text =
                             $"Player {playerComponent.Id} {(win ? "win" : "loose")}"
                             ;//+ $"{Environment.NewLine}Press {_gameData.level.restartKey.ToString()} to restart";
                         _inputManager.RestartButton.gameObject.SetActive(true);
@@ -43,7 +43,7 @@ namespace Game.Systems {
                             var playerComponent = _playerEnitites.Get1(player);
                             scoreText += $"Player {playerComponent.Id}: {playerComponent.Score} {Environment.NewLine}";
                         }
-                        _sceneData.scoreText.GetComponent<TextMeshPro>().text = scoreText;
+                        _sceneData.scoreText.GetComponent<TextMeshProUGUI>().text = scoreText;
                     }
                 }
             }

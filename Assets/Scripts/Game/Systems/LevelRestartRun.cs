@@ -16,7 +16,7 @@ namespace Game.Systems {
                 ref var levelState = ref _levelEntities.Get1(level).LevelState;
                 if (levelState == LevelState.Restarting) {
                     // clear finish message
-                    _sceneData.finishText.GetComponent<TextMeshPro>().text = "";
+                    _sceneData.finishText.GetComponent<TextMeshProUGUI>().text = "";
                     // move player entities to their spawn positions
                     foreach (int player in _playerEntities) {
                         var playerComponent = _playerEntities.Get2(player);
