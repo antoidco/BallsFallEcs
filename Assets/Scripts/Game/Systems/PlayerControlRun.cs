@@ -1,11 +1,13 @@
 using Game.Components;
 using Leopotam.Ecs;
 using Game.Components.Player;
+using Game.UI;
 using UnityEngine;
 
 namespace Game.Systems {
     sealed class PlayerControlRun : IEcsRunSystem {
         readonly EcsWorld _world = null;
+        private readonly InputManager _inputManager = null;
 
         private readonly EcsFilter<BodyComponent, PlayerComponent, MoveComponent>.Exclude<AIComponent> _playerEntities =
             null;
@@ -26,11 +28,13 @@ namespace Game.Systems {
             bool isMaxSpeedRight = velX >= playerComponent.Speed;
 
             _force.x = 0;
-            if (Input.GetKey(playerComponent.MoveLeftKey)) {
+            if (Input.GetKey(playerComponent.MoveLeftKey) 
+                || _inputManager.UIControls[playerComponent.Id].LeftButton.Pressed) {
                 _force.x -= (isMaxSpeedLeft ? 0 : 1f);
             }
 
-            if (Input.GetKey(playerComponent.MoveRightKey)) {
+            if (Input.GetKey(playerComponent.MoveRightKey)
+                || _inputManager.UIControls[playerComponent.Id].RightButton.Pressed) {
                 _force.x += (isMaxSpeedRight ? 0 : 1f);
             }
 

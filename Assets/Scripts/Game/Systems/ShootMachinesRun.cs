@@ -14,7 +14,7 @@ namespace Game.Systems {
             foreach (int machine in _machineEntities) {
                 var machineComponent = _machineEntities.Get1(machine);
                 var framesPerMachineFreq = (int) ((1.0 / machineComponent.frequency) / Time.deltaTime);
-                if (Time.frameCount % framesPerMachineFreq == 0) {
+                if (framesPerMachineFreq > 0 && Time.frameCount % framesPerMachineFreq == 0) {
                     var positionComponent = _machineEntities.Get2(machine);
                     ref var machineEntity = ref _machineEntities.GetEntity(machine);
                     SpawnItem spawnItem;

@@ -1,6 +1,7 @@
 using Game.Components;
 using Game.Components.Pool;
 using Game.Systems;
+using Game.UI;
 using Leopotam.Ecs;
 using UnityEngine;
 
@@ -12,6 +13,7 @@ namespace Game {
 
         public Setup gameSetup;
         public SceneData sceneData;
+        public InputManager inputManager;
 
         void Start() {
             _world = new EcsWorld();
@@ -46,6 +48,7 @@ namespace Game {
                 .OneFrame<PoolSpawnFrame>()
                 .Inject(gameSetup)
                 .Inject(sceneData)
+                .Inject(inputManager)
                 .Init();
         }
 

@@ -1,4 +1,5 @@
 using Game.Systems;
+using Game.UI;
 using Leopotam.Ecs;
 using UnityEngine;
 
@@ -7,6 +8,7 @@ namespace Game {
         EcsWorld _world;
         EcsSystems _systems;
         public SceneData sceneData;
+        public InputManager inputManager;
 
         void Start () {
 
@@ -21,6 +23,7 @@ namespace Game {
                 .Add(new PlayerControlRun())
                 .Add(new PlayerMoveRun())
                 .Inject(sceneData)
+                .Inject(inputManager)
                 .Init ();
         }
 
