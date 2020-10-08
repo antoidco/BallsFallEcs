@@ -5,6 +5,7 @@ using Utils;
 namespace Game.UI {
     public class InputManager : MonoBehaviour {
         public List<UIControlComponent> UIControls;
+        public PressedComponent RestartButton;
 
         public void Start() {
             if (UIControls.Count > 1) {

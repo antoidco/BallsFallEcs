@@ -1,6 +1,7 @@
 using System;
 using Game.Components;
 using Game.Components.Player;
+using Game.UI;
 using Leopotam.Ecs;
 using TMPro;
 using UnityEngine;
@@ -10,6 +11,7 @@ namespace Game.Systems {
         readonly EcsWorld _world = null;
         private readonly SceneData _sceneData = null;
         private readonly Setup _gameData = null;
+        private readonly InputManager _inputManager = null;
 
         private readonly EcsFilter<PlayerComponent, BodyComponent, FinishedFrame> _finishedEnitites =
             null;
@@ -27,9 +29,11 @@ namespace Game.Systems {
                         var playerComponent = _finishedEnitites.Get1(finish);
                         bool win = _finishedEnitites.Get3(finish).Win;
                         Debug.Log($"Player {playerComponent.Id} {(win ? "win" : "loose")}");
-                        
+
                         _sceneData.finishText.GetComponent<TextMeshPro>().text =
-                            $"Player {playerComponent.Id} {(win ? "win" : "loose")}{Environment.NewLine}Press {_gameData.level.restartKey.ToString()} to restart";
+                            $"Player {playerComponent.Id} {(win ? "win" : "loose")}"
+                            ;//+ $"{Environment.NewLine}Press {_gameData.level.restartKey.ToString()} to restart";
+                        _inputManager.RestartButton.gameObject.SetActive(true);
                     }
 
                     // update score text

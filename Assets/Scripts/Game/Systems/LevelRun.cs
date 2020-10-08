@@ -1,6 +1,7 @@
 using Game.Components;
 using Game.Components.Map.Walls;
 using Game.Components.Player;
+using Game.UI;
 using Leopotam.Ecs;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ namespace Game.Systems {
     sealed class LevelRun : IEcsRunSystem {
         readonly EcsWorld _world = null;
         private readonly Setup _gameData = null;
+        private readonly InputManager _inputManager = null;
         private readonly EcsFilter<BodyComponent, PlayerComponent> _playerEntities = null;
         private readonly EcsFilter<PositionComponent, FinishComponent> _finishEntities = null;
         private readonly EcsFilter<LevelStateComponent> _levelEntities = null;
@@ -42,7 +44,10 @@ namespace Game.Systems {
                     }
                 } // if game is ended, check for restart event create
                 else if (levelState == LevelState.GameEnded) {
-                    if (Input.GetKey(_gameData.level.restartKey)) {
+                    if (Input.GetKey(_gameData.level.restartKey)
+                    || _inputManager.RestartButton.Pressed) {
+                        _inputManager.RestartButton.Pressed = false;
+                        _inputManager.RestartButton.gameObject.SetActive(false);
                         levelState = LevelState.Restarting;
                         ref var levelEntity = ref _levelEntities.GetEntity(level);
                         levelEntity.Get<RestartFrame>();
