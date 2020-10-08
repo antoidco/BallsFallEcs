@@ -2,24 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraFollow : MonoBehaviour
-{
+public class CameraFollow : MonoBehaviour {
     public List<Transform> players;
     private float _offset_z;
-    void Start()
-    {
+
+    void Start() {
         _offset_z = transform.position.z;
     }
 
-    void LateUpdate()
-    {
+    void LateUpdate() {
         Vector3 middle = new Vector3();
         float maxR = 0;
-        for (int i = 0; i < players.Count; ++i)
-        {
+        for (int i = 0; i < players.Count; ++i) {
             if (i > 0) maxR = Mathf.Max(maxR, (players[i].position - players[i - 1].position).magnitude);
             middle += players[i].position;
         }
-        if (players.Count > 0) transform.position = new Vector3(middle.x / players.Count, middle.y / players.Count, _offset_z - maxR * 0.75f);
+
+        if (players.Count > 0)
+            transform.position =
+                new Vector3(middle.x / players.Count, middle.y / players.Count, _offset_z - maxR * DynamicScale());
+    }
+
+    private float DynamicScale() {
+        if (Screen.height > Screen.width) {
+            // vertical orientation
+            return 1.5f;
+        }
+        else {
+            // horizontal orientation
+            return 0.375f;
+        }
+            
     }
 }
