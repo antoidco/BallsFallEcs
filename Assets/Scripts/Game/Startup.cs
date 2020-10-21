@@ -1,3 +1,4 @@
+using System;
 using Game.Components;
 using Game.Components.Pool;
 using Game.Systems;
@@ -14,8 +15,12 @@ namespace Game {
         public Setup gameSetup;
         public SceneData sceneData;
         public InputManager inputManager;
-
+        private GameData _gameData;
+        
         void Start() {
+            _gameData = FindObjectOfType<GameData>() ?? throw new Exception("No GameData in Scene");
+            SelectGameType();
+
             _world = new EcsWorld();
             _fixedUpdateSystems = new EcsSystems(_world);
             _updateSystems = new EcsSystems(_world);
@@ -73,6 +78,10 @@ namespace Game {
 
             _world?.Destroy();
             _world = null;
+        }
+        
+        private void SelectGameType() { 
+            sceneData.players[1].bot = _gameData.GameWithBot;    
         }
     }
 }

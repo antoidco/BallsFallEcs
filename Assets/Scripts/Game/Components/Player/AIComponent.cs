@@ -1,6 +1,3 @@
-﻿namespace Game.Components.Player
-{
-    public struct AIComponent
-    {
-    }
+﻿namespace Game.Components.Player {
+    public struct AIComponent { }
 }

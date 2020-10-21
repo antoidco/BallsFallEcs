@@ -12,7 +12,6 @@ namespace Game.Systems {
             int id = 0;
             var cameraFollow = Camera.main.transform.GetComponent<CameraFollow>();
             foreach (var player in _sceneData.players) {
-                //var playerObject = GameObject.Instantiate(player.playerPrefab);
                 var playerObject = player;
                 player.gameObject.SetActive(true);
                 playerObject.transform.position = new Vector3(_sceneData.players[id].spawnPosition.x,

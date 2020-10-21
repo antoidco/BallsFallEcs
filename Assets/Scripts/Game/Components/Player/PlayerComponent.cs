@@ -1,9 +1,7 @@
 ﻿using UnityEngine;
 
-namespace Game.Components.Player
-{
-    public struct PlayerComponent
-    {
+namespace Game.Components.Player {
+    public struct PlayerComponent {
         public KeyCode MoveLeftKey;
         public KeyCode MoveRightKey;
         public float Speed;

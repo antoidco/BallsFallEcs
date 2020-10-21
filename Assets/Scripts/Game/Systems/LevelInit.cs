@@ -48,7 +48,7 @@ namespace Game.Systems {
         List<Vector2> GenerateLevelWalls(int sizeX, int sizeY, float wallDensity, int wallLen, int wallLenDelta) {
             var result = new List<Vector2>();
 
-            // to do: more flexible solution
+            // todo: more flexible solution
             for (int i = 0; i < sizeY; i += 3) {
                 int y = -i - 5;
                 for (int j = 0; j < sizeX; ++j) {

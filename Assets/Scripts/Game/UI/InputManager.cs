@@ -9,7 +9,7 @@ namespace Game.UI {
 
         public void Start() {
             if (UIControls.Count > 1) {
-                if (StartGame.withBot) {
+                if (FindObjectOfType<GameData>()?.GameWithBot == true) {
                     UIControls[1].LeftButton.gameObject.SetActive(false);
                     UIControls[1].RightButton.gameObject.SetActive(false);
                 }

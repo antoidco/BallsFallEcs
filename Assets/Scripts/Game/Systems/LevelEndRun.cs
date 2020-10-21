@@ -31,8 +31,7 @@ namespace Game.Systems {
                         Debug.Log($"Player {playerComponent.Id} {(win ? "win" : "loose")}");
 
                         _sceneData.finishText.GetComponent<TextMeshProUGUI>().text =
-                            $"Player {playerComponent.Id} {(win ? "win" : "loose")}"
-                            ;//+ $"{Environment.NewLine}Press {_gameData.level.restartKey.ToString()} to restart";
+                            $"Player {playerComponent.Id} {(win ? "win" : "loose")}";
                         _inputManager.RestartButton.gameObject.SetActive(true);
                     }
 

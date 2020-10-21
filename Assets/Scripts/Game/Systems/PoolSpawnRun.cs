@@ -33,9 +33,8 @@ namespace Game.Systems {
 
                 return instance;
             }
-            else {
-                return null;
-            }
+
+            return null;
         }
     }
 }

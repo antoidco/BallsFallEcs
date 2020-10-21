@@ -3,18 +3,20 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Utils {
-    public class StartGame : MonoBehaviour {
-        public static bool withBot = false;
-        public MenuStartup menuStartup;
+    public class StartGameFromMenu : MonoBehaviour {
+        private GameData _gameData;
 
+        private void Start() {
+            _gameData = FindObjectOfType<GameData>();
+        }
         private void OnTriggerEnter(Collider other) {
             if (other.tag == "Game1v1") {
-                withBot = false;
+                _gameData.GameWithBot = false;
                 SceneManager.LoadScene("Main");
             }
 
             if (other.tag == "GameWithBot") {
-                withBot = true;
+                _gameData.GameWithBot = true;
                 SceneManager.LoadScene("Main");
             }
         }
